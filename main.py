@@ -8,7 +8,7 @@ from player import Player
 COLOR_SCREEN = (0, 0, 0)
 
 def main():
-    pygame.init
+    pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
@@ -19,9 +19,10 @@ def main():
             if event.type == pygame.QUIT:
                 return
             
-        pygame.Surface.fill(screen, COLOR_SCREEN)
-        pygame.display.flip()
+        screen.fill("black")
         player.draw(screen)
+        pygame.display.flip()
+        
         dt = clock.tick(60) / 1000
 
 
